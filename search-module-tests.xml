@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="search-for-videos-test">
+    <test name="search-for-java">
+        <parameter name="term" value="java"/>
+        <classes>
+            <class name="com.searchmodule.tests.SearchTest"/>
+        </classes>
+    </test><test name="search-for-qa">
+    <parameter name="term" value="qa"/>
+    <classes>
+        <class name="com.searchmodule.tests.SearchTest"/>
+    </classes>
+</test>
+</suite>

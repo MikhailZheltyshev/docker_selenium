@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="search-for-videos-test">
+    <test name="book-flight-simple-test-2">
+        <parameter name="countOfPassengers" value="2"/>
+        <parameter name="expectedPrice" value="$1169 USD"/>
+        <classes>
+            <class name="com.newtours.tests.BookFlightTest"/>
+        </classes>
+    </test>
+    <test name="book-flight-simple-test-3">
+        <parameter name="countOfPassengers" value="3"/>
+        <parameter name="expectedPrice" value="$1753 USD"/>
+        <classes>
+            <class name="com.newtours.tests.BookFlightTest"/>
+        </classes>
+    </test>
+</suite>

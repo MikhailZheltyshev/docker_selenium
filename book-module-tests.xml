@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="search-for-videos-test">
+<suite name="book-flight-test">
     <test name="book-flight-simple-test-2">
         <parameter name="countOfPassengers" value="2"/>
         <parameter name="expectedPrice" value="$1169 USD"/>

@@ -1,34 +1,47 @@
 version: "3.5"
 
 services:
-  
+
   hub:
     image: selenium/hub:3.141.59
     ports:
       - "4444:4444"
 
   chrome:
-      image: selenium/node-chrome:3.141.59
-      depends_on:
-        - hub
-      environment:
-        - HUB_HOST=hub
-  
+    image: selenium/node-chrome:3.141.59
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+
   firefox:
-      image: selenium/node-firefox:3.141.59
-      depends_on:
-        - hub
-      environment:
-        - HUB_HOST=hub
+    image: selenium/node-firefox:3.141.59
+    shm_size: '1gb'
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
 
   search-module:
-      image: selenium_tests_container
-      depends_on:
-        - chrome
-        - firefox
-      environment:
-        - BROWSER=chrome
-        - HUB_HOST=hub
-        - MODULE=search-module-tests.xml
-      volumes:
-        - ./search-test-results:/test_executables/test-output
+    image: selenium_tests_container
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub
+      - MODULE=search-module-tests.xml
+    volumes:
+      - ./search-test-results:/test_executables/test-output
+
+  book-flight-module:
+    image: selenium_tests_container
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - MODULE=book-module-tests.xml
+    volumes:
+      - ./book-flight-test-results:/test_executables/test-output

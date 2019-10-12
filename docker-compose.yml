@@ -20,3 +20,15 @@ services:
         - hub
       environment:
         - HUB_HOST=hub
+
+  search-module:
+      image: selenium_tests_container
+      depends_on:
+        - chrome
+        - firefox
+      environment:
+        - BROWSER=chrome
+        - HUB_HOST=hub
+        - MODULE=search-module-tests.xml
+      volumes:
+        - ./search-test-results:/test_executables/test-output

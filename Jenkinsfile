@@ -20,6 +20,7 @@ pipeline {
                     //sh
 			        sh "docker login --username=${user} --password=${pass}"
 			        sh "docker push mihalichzh/selenium_tests_image:latest"
+			        sh "docker push mihalichzh/selenium_tests_image:${BUILD_NUMBER}"
 			    }
             }
         }

@@ -11,7 +11,8 @@ pipeline {
         stage('Build Image') {
             steps {
                 //sh
-                sh "docker build -t='mihalichzh/selenium_tests_image' ."
+                sh "docker build -t='mihalichzh/selenium_tests_image:latest' ."
+                sh "docker build -t='mihalichzh/selenium_tests_image:${BUILD_NUMBER}' ."
             }
         }
         stage('Push Image') {

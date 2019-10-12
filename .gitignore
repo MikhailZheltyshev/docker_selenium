@@ -1,2 +1,6 @@
 # Project exclude paths
-/target/
+target/
+output/
+.idea/
+practise.iml
+src/main/resources/

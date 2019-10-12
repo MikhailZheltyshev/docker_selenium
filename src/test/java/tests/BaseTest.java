@@ -17,12 +17,14 @@ public class BaseTest {
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
-        DesiredCapabilities dc = DesiredCapabilities.chrome();
+        DesiredCapabilities dc;
         String host = "localhost";
 
         if (System.getProperty("BROWSER") != null
                 && System.getProperty("BROWSER").equalsIgnoreCase("firefox")) {
             dc = DesiredCapabilities.firefox();
+        } else {
+            dc = DesiredCapabilities.chrome();
         }
 
         if (System.getProperty("HUB_HOST") != null) {

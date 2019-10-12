@@ -1,6 +1,6 @@
 # Project exclude paths
 target/
-output/
+output
 .idea/
 practise.iml
 src/main/resources/
